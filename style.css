@@ -1,0 +1,449 @@
+/* ================================
+   FLASHCARD QUIZ APP - PROFESSIONAL UI
+   ================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+    --secondary: #8b5cf6;
+    --text: #1e293b;
+    --text-light: #64748b;
+    --white: #ffffff;
+    --border: #e2e8f0;
+    --background: #f8fafc;
+    --success: #10b981;
+    --danger: #ef4444;
+    --shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+}
+
+/* ================================
+   BODY
+   ================================ */
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #eef2ff, #f8fafc, #f5f3ff);
+    min-height: 100vh;
+    color: var(--text);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 15px;
+}
+
+/* ================================
+   MAIN CONTAINER
+   ================================ */
+
+.container {
+    width: 100%;
+    max-width: 720px;
+    text-align: center;
+}
+
+/* ================================
+   HEADER
+   ================================ */
+
+h1 {
+    font-size: 42px;
+    font-weight: 750;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+
+    background: linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    color: var(--text-light);
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+/* ================================
+   FLASHCARD
+   ================================ */
+
+.card {
+    position: relative;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 24px;
+
+    padding: 55px 35px;
+
+    min-height: 320px;
+
+    box-shadow: var(--shadow);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 60px rgba(15, 23, 42, 0.16);
+}
+
+/* ================================
+   CARD CONTENT
+   ================================ */
+
+.card-content {
+    width: 100%;
+    min-height: 120px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card h2 {
+    font-size: 27px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: var(--text);
+}
+
+.card p {
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--text-light);
+
+    max-width: 580px;
+}
+
+/* ================================
+   HIDDEN
+   ================================ */
+
+.hidden {
+    display: none !important;
+}
+
+/* ================================
+   BUTTON BASE
+   ================================ */
+
+button {
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 14px;
+
+    border: none;
+    border-radius: 10px;
+
+    padding: 12px 20px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/* ================================
+   SHOW ANSWER
+   ================================ */
+
+#showAnswer {
+    margin-top: 25px;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color: white;
+
+    padding: 13px 28px;
+
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+}
+
+#showAnswer:hover {
+    box-shadow: 0 12px 25px rgba(99, 102, 241, 0.4);
+}
+
+/* ================================
+   NAVIGATION
+   ================================ */
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 25px 0;
+}
+
+.navigation button {
+    background: white;
+    color: var(--text);
+
+    border: 1px solid var(--border);
+
+    min-width: 115px;
+
+    box-shadow: 0 5px 15px rgba(15, 23, 42, 0.06);
+}
+
+.navigation button:hover {
+    background: #f1f5f9;
+}
+
+#counter {
+    min-width: 65px;
+
+    color: var(--text-light);
+
+    font-weight: 700;
+}
+
+/* ================================
+   MANAGEMENT BUTTONS
+   ================================ */
+
+.management {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 10px;
+}
+
+.management button {
+    color: white;
+
+    background: #1e293b;
+
+    box-shadow: 0 5px 15px rgba(15, 23, 42, 0.12);
+}
+
+.management button:hover {
+    background: #334155;
+}
+
+/* Add button */
+
+#addCard {
+    background: var(--success);
+}
+
+#addCard:hover {
+    background: #059669;
+}
+
+/* Edit button */
+
+#editCard {
+    background: var(--primary);
+}
+
+#editCard:hover {
+    background: var(--primary-dark);
+}
+
+/* Delete button */
+
+#deleteCard {
+    background: var(--danger);
+}
+
+#deleteCard:hover {
+    background: #dc2626;
+}
+
+/* ================================
+   FORM
+   ================================ */
+
+.form-container {
+    margin-top: 25px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    box-shadow: var(--shadow);
+
+    animation: slideDown 0.3s ease;
+}
+
+.form-container input {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    margin-bottom: 12px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    color: var(--text);
+
+    background: #f8fafc;
+
+    transition: 0.2s ease;
+}
+
+.form-container input:focus {
+    border-color: var(--primary);
+
+    background: white;
+
+    box-shadow:
+        0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+.form-container button {
+    background: var(--primary);
+    color: white;
+}
+
+.form-container button:hover {
+    background: var(--primary-dark);
+}
+
+#cancelForm {
+    background: #64748b;
+}
+
+#cancelForm:hover {
+    background: #475569;
+}
+
+/* ================================
+   ANIMATION
+   ================================ */
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+   ================================ */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px 12px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .card {
+        padding: 40px 20px;
+        min-height: 300px;
+        border-radius: 20px;
+    }
+
+    .card h2 {
+        font-size: 22px;
+    }
+
+    .card p {
+        font-size: 17px;
+    }
+
+    .navigation {
+        gap: 5px;
+    }
+
+    .navigation button {
+        min-width: 100px;
+        padding: 10px 12px;
+    }
+
+    .management button {
+        font-size: 13px;
+        padding: 10px 14px;
+    }
+}
+
+/* ================================
+   SMALL MOBILE DEVICES
+   ================================ */
+
+@media (max-width: 400px) {
+
+    h1 {
+        font-size: 27px;
+    }
+
+    .card {
+        padding: 30px 15px;
+    }
+
+    .navigation {
+        flex-wrap: wrap;
+    }
+
+    .navigation button {
+        min-width: 90px;
+    }
+}
